@@ -267,14 +267,14 @@
         {
           "n": 27,
           "date": "2026-12-03",
-          "title": "Demo Day, first session",
-          "summary": "Student teams present the products they built."
+          "title": "Demo Day (first session)",
+          "summary": "Student groups present the products they built."
         },
         {
           "n": 28,
           "date": "2026-12-08",
-          "title": "Demo Day, second session",
-          "summary": "The remaining teams present, and the semester closes."
+          "title": "Demo Day (second session)",
+          "summary": "The remaining groups present, and the semester closes."
         }
       ]
     }
@@ -310,11 +310,11 @@
     {
       "id": "P4",
       "name": "Full-stack agent project",
-      "format": "Team",
+      "format": "Group",
       "from": 13,
       "to": 28,
-      "short": "Team project",
-      "summary": "A working product built by a team around an agent for a real user, with one claim backed by a small evaluation and a threat model, presented at Demo Day."
+      "short": "Group project",
+      "summary": "A working product built by a group of students around an agent for a real user, with one claim backed by a small evaluation and a threat model, presented at Demo Day."
     }
   ]
 }

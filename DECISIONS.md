@@ -18,7 +18,7 @@ The site therefore describes the course design and what students build, and it m
 
 Published: the schedule, module and lecture summaries, learning outcomes, the class format, project descriptions, and the instructor's note on how the course was built.
 Not published: anything from the private repositories verbatim, answer keys, quizzes, lesson plans, teaching notes, rubrics, grading internals, and any student's work.
-Student work appears only for students or teams who opted in, in writing; the Demo Day section says so and shows nothing until then.
+Student work appears only for students or groups who opted in, in writing; the Demo Day section says so and shows nothing until then.
 The internal survey of other universities' courses is not published, because its comparisons of named programs came from an agent-run sweep and are not verified; the build note mentions the survey only as a step in the process.
 
 ## Stack
@@ -54,4 +54,4 @@ The link preview image shows the timeline without a today line, so a cached prev
 
 - Analytics. If the instructor wants to know how many visitors the LinkedIn post brings, GoatCounter or Cloudflare Web Analytics are free and privacy-friendly; either needs an account that only the instructor can create.
 - A custom domain.
-- The Demo Day gallery, until teams opt in.
+- The Demo Day gallery, until groups opt in.

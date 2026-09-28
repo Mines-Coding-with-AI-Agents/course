@@ -81,6 +81,21 @@ a:hover {
   text-underline-offset: 3px;
 }
 
+/* Links inside running text keep an underline, so they never rely on color alone. */
+.footer-meta a,
+.prose p a,
+.note a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--accent-line);
+  text-underline-offset: 3px;
+}
+
+.footer-meta a:hover,
+.prose p a:hover {
+  text-decoration-color: currentColor;
+}
+
 a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -547,7 +562,16 @@ code {
   content: "";
   grid-row: 1 / 3;
   border-radius: 2px;
-  background: linear-gradient(to bottom, var(--ink) calc(var(--done) * 100%), var(--track) 0);
+  background: var(--line-strong);
+}
+
+.tl-item.tl-done::before {
+  background: var(--ink);
+}
+
+/* The current module: its elapsed part in the accent, never thinner than 6px so it stays visible. */
+.tl-item.tl-active::before {
+  background: linear-gradient(to bottom, var(--accent) max(6px, calc(var(--done) * 100%)), var(--accent-line) 0);
 }
 
 .tl-item .tl-name,
@@ -975,6 +999,10 @@ code {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .built {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .features {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -996,7 +1024,6 @@ code {
     border-bottom: 1px solid var(--line);
   }
 
-  .built,
   .columns,
   .module {
     grid-template-columns: minmax(0, 1fr);

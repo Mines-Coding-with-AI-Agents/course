@@ -94,14 +94,6 @@ def module_dates(module):
     return f"{short_date(start)} to {short_date(end)}"
 
 
-def demo_day():
-    """'Demo Day on December 3 and 8', from the dates of the Demo Day lectures."""
-    days = [day(lec["date"]) for m in CURRICULUM["modules"] if m["number"] is None for lec in m["lectures"]]
-    if all(d.month == days[0].month for d in days):
-        return f"Demo Day on {long_date(days[0])} and {' and '.join(str(d.day) for d in days[1:])}"
-    return "Demo Day on " + " and ".join(long_date(d) for d in days)
-
-
 def project_state(project, today):
     start, due = project_dates(project)
     if today > due:
@@ -148,6 +140,9 @@ def status_line(today):
         return f"The Fall {last.year} semester ended on {long_date(last)}."
     nxt = next(lec for lec in lecs if day(lec["date"]) >= today)
     when = "today" if day(nxt["date"]) == today else f"on {long_date(day(nxt['date']))}"
+    demo = next(m for m in CURRICULUM["modules"] if m["number"] is None)
+    if nxt in demo["lectures"]:
+        return f"Demo Day is {when}."
     return f"Lecture {nxt['n']} of {len(lecs)}, {nxt['title']}, is {when}."
 
 
@@ -176,6 +171,9 @@ def timeline(today):
         row = "a" if i % 2 == 0 else "b"
         following = next((module_span(m)[0] for m in modules[i + 2:i + 3]), total)
         last = i == len(modules) - 1
+        if i + 2 == len(modules) - 1:
+            # The last label is right-aligned over the final three columns; stop short of it.
+            following = min(following, total - 3)
         column = f"{following - 3 + 1} / {total + 1}" if last else f"{start + 1} / {following + 1}"
         cells.append(
             f'<span class="tl-label tl-row-{row}{" tl-label-end" if last else ""}" style="grid-column: {column}">'

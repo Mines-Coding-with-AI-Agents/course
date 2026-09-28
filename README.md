@@ -40,7 +40,7 @@ The same workflow also runs once a day, so each project's status line on the hom
 
 - **A lecture's title, summary, or date changed.** Edit `content/curriculum.json`, then build and check. The timeline, the project list, and the curriculum page all update from that one file.
 - **The share image needs updating** (after a design or title change). Run `python3 build.py og`, which renders `tools/og.html` with Chrome into `static/img/og.png`, then commit the PNG. LinkedIn caches previews, so use the LinkedIn Post Inspector to refresh a link that was already shared.
-- **Demo Day projects are ready to show.** Add them only for teams that opted in, in writing. See `DECISIONS.md` for the rule.
+- **Demo Day projects are ready to show.** Add them only for groups that opted in, in writing. See `DECISIONS.md` for the rule.
 
 ## What may be published here
 
