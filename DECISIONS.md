@@ -36,12 +36,19 @@ A custom domain can be added later by changing `site_url` and `base_path` in `co
 
 ## Design
 
-The subject is a course at a geology and engineering school, so the signature element is a stratigraphic column of the semester: eight module layers stacked from the first week at the bottom to security and Demo Day at the top, each layer as thick as its number of lectures, with the four projects drawn as bars beside the column.
-It encodes the course's arc, from using agents to engineering them, as something built up layer by layer.
-Everything else stays quiet: a cool paper background, navy ink, one link blue, and muted rock tones only inside the column.
-Headings use Barlow Semi Condensed, which recalls the lettering on engineering drawings, and body text uses Source Serif 4, which reads like a report.
-Both fonts are self-hosted under the SIL Open Font License, so the site makes no third-party requests.
-The only motion is the layers settling into place once on load, and it is turned off for readers who prefer reduced motion.
+The brief is professional, modern, and minimal.
+The first version, styled as a geological survey report with a textured stratigraphic column, was replaced on 2026-09-28 for that reason.
+
+One typeface does all the work: Mona Sans, GitHub's open-source variable font, fitting for a course whose projects all ship on GitHub.
+Headings use a slightly wider cut and tight spacing; body text uses the regular width.
+The palette is white, navy ink, grays, and one blue accent, and structure comes from white space and hairlines rather than boxes or shadows.
+The font is self-hosted under the SIL Open Font License, so the site makes no third-party requests.
+
+The signature element is the semester timeline: the modules as one segmented bar that fills in as the semester passes, the four projects as bars beneath it, and a line at today.
+A status line above it names the next lecture, and the daily rebuild keeps both current, so a visitor sees a course that is running, not a brochure.
+On phones the chart becomes a list of modules with a progress bar each; the same list serves screen readers on wide screens, where the chart itself is hidden from them.
+The only motion is the bar filling once on load, and it is turned off for readers who prefer reduced motion.
+The link preview image shows the timeline without a today line, so a cached preview never shows a stale date.
 
 ## Not included yet
 

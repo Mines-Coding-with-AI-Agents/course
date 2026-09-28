@@ -28,7 +28,7 @@ The same workflow also runs once a day, so each project's status line on the hom
 
 | Path | What it is |
 |---|---|
-| `content/curriculum.json` | The single source for the lectures, modules, projects, class format, and outcomes. The stratigraphic column, the project list, and the curriculum page are all generated from it. |
+| `content/curriculum.json` | The single source for the lectures, modules, projects, class format, and outcomes. The semester timeline, the project list, and the curriculum page are all generated from it. |
 | `content/site.json` | Site-wide facts: title, URL, base path, instructor, contact. |
 | `pages/*.html` | One file per page. Each starts with an HTML comment holding its metadata as JSON, and may use `{{ slot }}` placeholders that `build.py` fills. |
 | `templates/base.html` | The shared page shell: head, share-preview tags, header, footer. |
@@ -38,7 +38,7 @@ The same workflow also runs once a day, so each project's status line on the hom
 
 ## Common changes
 
-- **A lecture's title, summary, or date changed.** Edit `content/curriculum.json`, then build and check. The column, the project runways, and the curriculum page all update from that one file.
+- **A lecture's title, summary, or date changed.** Edit `content/curriculum.json`, then build and check. The timeline, the project list, and the curriculum page all update from that one file.
 - **The share image needs updating** (after a design or title change). Run `python3 build.py og`, which renders `tools/og.html` with Chrome into `static/img/og.png`, then commit the PNG. LinkedIn caches previews, so use the LinkedIn Post Inspector to refresh a link that was already shared.
 - **Demo Day projects are ready to show.** Add them only for teams that opted in, in writing. See `DECISIONS.md` for the rule.
 

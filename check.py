@@ -142,6 +142,24 @@ def check_curriculum():
     check(spans, "curriculum: every project runs between two real lectures")
 
 
+def check_timeline():
+    import build
+    from datetime import timedelta
+    first = date.fromisoformat(CURRICULUM["first_day"])
+    last = date.fromisoformat(CURRICULUM["last_day"])
+    days = [first + timedelta(days=i) for i in range((last - first).days + 2)]
+    spots = [build.position(d) for d in days]
+    check(build.position(first - timedelta(days=1)) is None, "timeline: no today line before the semester starts")
+    check(all(0 <= p <= 28 for p in spots) and all(a <= b for a, b in zip(spots, spots[1:])),
+          "timeline: the today line moves forward every day of the semester and stays on the chart")
+    home = (OUT / "index.html").read_text() if (OUT / "index.html").is_file() else ""
+    modules = len(CURRICULUM["modules"])
+    check(home.count('class="tl-seg') == modules and home.count('class="tl-item') == modules,
+          f"timeline: the chart and the list each show all {modules} modules")
+    check(home.count('class="tl-project') == len(CURRICULUM["projects"]), "timeline: the chart shows every project")
+    check('class="live"' in home, "timeline: the home page carries the next-lecture status line")
+
+
 def check_page(rel, path):
     page = parse(rel)
     where = rel
@@ -210,6 +228,7 @@ def main():
         print("FAIL _site/ does not exist: run python3 build.py first")
         return 1
     check_curriculum()
+    check_timeline()
     for rel in list(PAGES) + [NOT_FOUND] + ASSETS:
         check((OUT / rel).is_file(), f"built: {rel} exists")
     pages = {}

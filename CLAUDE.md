@@ -24,5 +24,5 @@ It is public, and so is its whole history: anything committed here is published 
 ## Verify before you say it is done
 
 1. `python3 build.py && python3 check.py` must end with every check passing.
-2. Preview with `PORT=8766 python3 build.py serve` and look at every changed page at 1440px and 390px wide. Check that nothing overflows horizontally and that the stratigraphic column labels do not collide.
+2. Preview with `PORT=8766 python3 build.py serve` and look at every changed page at 1440px and 390px wide. Check that nothing overflows horizontally and that the timeline labels do not collide with each other or with the today line.
 3. After a design or title change, re-render the share image with `python3 build.py og` and look at `static/img/og.png`.
