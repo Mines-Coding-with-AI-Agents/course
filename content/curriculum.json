@@ -51,7 +51,6 @@
       "number": 1,
       "name": "Foundations and the working environment",
       "short": "Foundations",
-      "rock": "sandstone",
       "lectures": [
         {
           "n": 1,
@@ -83,7 +82,6 @@
       "number": 2,
       "name": "Using agents fluently",
       "short": "Fluent use",
-      "rock": "siltstone",
       "lectures": [
         {
           "n": 5,
@@ -109,7 +107,6 @@
       "number": 3,
       "name": "Context and memory",
       "short": "Context and memory",
-      "rock": "shale",
       "lectures": [
         {
           "n": 8,
@@ -129,7 +126,6 @@
       "number": 4,
       "name": "Tools and retrieval",
       "short": "Tools and retrieval",
-      "rock": "limestone",
       "lectures": [
         {
           "n": 10,
@@ -167,7 +163,6 @@
       "number": 5,
       "name": "Extending agents: skills, MCP, and codebases",
       "short": "Skills, MCP, codebases",
-      "rock": "dolomite",
       "lectures": [
         {
           "n": 15,
@@ -193,7 +188,6 @@
       "number": 6,
       "name": "Architectures, multi-agent systems, and building from scratch",
       "short": "Architectures",
-      "rock": "conglomerate",
       "lectures": [
         {
           "n": 18,
@@ -225,7 +219,6 @@
       "number": 7,
       "name": "Evaluation as a science",
       "short": "Evaluation",
-      "rock": "quartzite",
       "lectures": [
         {
           "n": 22,
@@ -251,7 +244,6 @@
       "number": 8,
       "name": "Security and the open frontier",
       "short": "Security",
-      "rock": "basalt",
       "lectures": [
         {
           "n": 25,
@@ -271,7 +263,6 @@
       "number": null,
       "name": "Demo Day",
       "short": "Demo Day",
-      "rock": "surface",
       "lectures": [
         {
           "n": 27,
@@ -295,8 +286,8 @@
       "format": "Individual",
       "from": 4,
       "to": 8,
-      "built": "Each student directed Claude Code to build a personal website and deployed it to GitHub Pages.",
-      "evidence": "Each site was handed in with a decision log, proof that the live site works, a short video on the design choices, and reviews of three classmates' sites."
+      "short": "Website",
+      "summary": "A personal website built by directing Claude Code, deployed to GitHub Pages, and handed in with a decision log and proof that the live site works."
     },
     {
       "id": "P2",
@@ -304,8 +295,8 @@
       "format": "Individual",
       "from": 12,
       "to": 17,
-      "built": "A question-answering system that retrieves from a document collection and grounds its answers in sources.",
-      "evidence": "Each system is measured against a hand-built set of questions, comparing keyword, embedding, and hybrid retrieval with reranking by recall@k, MRR, nDCG, and faithfulness."
+      "short": "RAG system",
+      "summary": "A question-answering system over a document collection, with keyword, embedding, and hybrid retrieval compared by recall@k, MRR, and nDCG on a hand-built gold set."
     },
     {
       "id": "P3",
@@ -313,8 +304,8 @@
       "format": "Individual",
       "from": 15,
       "to": 22,
-      "built": "Students extend an existing codebase with agent engineering of their own: skills, hooks, MCP servers, and project instructions.",
-      "evidence": "Each student writes up what they automated and how they verified that it works."
+      "short": "Codebase and skills",
+      "summary": "An existing codebase extended with the student's own skills, hooks, and MCP servers, with a write-up of what was automated and how it was verified."
     },
     {
       "id": "P4",
@@ -322,8 +313,8 @@
       "format": "Team",
       "from": 13,
       "to": 28,
-      "built": "Teams build a working product around an agent for a real user and present it at Demo Day.",
-      "evidence": "Each team backs one claim about its system with a small evaluation and writes a threat model for it."
+      "short": "Team project",
+      "summary": "A working product built by a team around an agent for a real user, with one claim backed by a small evaluation and a threat model, presented at Demo Day."
     }
   ]
 }

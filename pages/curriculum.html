@@ -9,27 +9,41 @@
 <section class="page-intro">
   <div class="wrap">
     <h1>Curriculum</h1>
-    <p class="lead">Twenty-eight lectures from August 25 to December 8, 2026, in eight modules. Each module builds on the ones below it, and the four projects run alongside.</p>
+    <p class="lead">Twenty-eight lectures from August 25 to December 8, 2026, in eight modules, with four projects running alongside.</p>
   </div>
 </section>
 
-<section class="section overview" aria-label="Overview">
-  <div class="wrap overview-inner">
-    {{ strata_full }}
-    <div class="overview-text">
+<section class="section section-timeline" aria-labelledby="semester-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="semester-title">The semester at a glance</h2>
+      <p class="live"><span class="live-dot" aria-hidden="true"></span>{{ status }}</p>
+    </div>
+    {{ timeline }}
+  </div>
+</section>
+
+<section class="section" aria-label="How the course works">
+  <div class="wrap columns">
+    <div>
       <h2>How a class runs</h2>
-      <p>Classes meet on Tuesdays and Thursdays for 75 minutes, and each one follows the same order.</p>
+      <p class="muted">Tuesdays and Thursdays, 75 minutes, always in this order.</p>
       {{ class_format }}
-      <h2>What students can do by the end</h2>
+    </div>
+    <div>
+      <h2>Learning outcomes</h2>
+      <p class="muted">What students can do by the end of the semester.</p>
       {{ outcomes }}
     </div>
   </div>
 </section>
 
-<section class="section section-rule" aria-labelledby="lectures-title">
+<section class="section" aria-labelledby="lectures-title">
   <div class="wrap">
-    <h2 id="lectures-title" class="lectures-title">Every lecture, in order</h2>
-    <p class="section-lead">Lectures after {{ refined_after }} are planned in full, and their topics may still be refined before they are taught.</p>
+    <div class="section-head">
+      <h2 id="lectures-title">Every lecture</h2>
+      <p class="muted">Lectures after {{ refined_after }} are planned in full and may still be refined before they are taught.</p>
+    </div>
     {{ curriculum }}
   </div>
 </section>

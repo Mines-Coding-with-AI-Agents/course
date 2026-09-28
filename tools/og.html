@@ -6,23 +6,26 @@
 <link rel="stylesheet" href="static/css/site.css">
 <style>
   html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
-  body { display: grid; grid-template-columns: 1fr 470px; align-items: center; gap: 56px; padding: 0 64px 0 72px; box-sizing: border-box; background: var(--paper); }
-  .og-kicker { font-family: var(--head); font-weight: 500; font-size: 26px; color: var(--slate); margin: 0 0 18px; }
-  h1 { font-size: 92px; line-height: 0.95; letter-spacing: -0.015em; margin: 0 0 26px; }
-  .og-lead { font-size: 28px; line-height: 1.38; margin: 0; max-width: 17em; }
-  .strata-figure figcaption { display: none; }
-  .strata { --u: 19.5px; }
-  .layer { animation: none; }
-  .layer-name { font-size: 18px; }
-  .layer-when { font-size: 15px; }
+  body { display: flex; flex-direction: column; justify-content: space-between; padding: 64px 72px 60px; box-sizing: border-box; background: #fff; }
+  .og-top { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 22px; font-weight: 520; margin: 0 0 26px; }
+  .og-top svg { width: 30px; height: 30px; }
+  h1 { font-size: 92px; font-weight: 650; font-stretch: 110%; line-height: 0.96; letter-spacing: -0.04em; margin: 0 0 22px; }
+  .og-lead { font-size: 27px; line-height: 1.4; margin: 0; max-width: 34em; color: var(--text); }
+  .tl-chart { grid-template-rows: auto 14px auto auto; padding-top: 0; }
+  .tl-project, .tl-today { display: none; }
+  .tl-seg::after { animation: none; }
+  .tl-name { font-size: 15.5px; }
+  .tl-when { font-size: 14px; }
+  .tl-month { font-size: 14px; }
+  .tl-list { display: none; }
 </style>
 </head>
 <body>
   <div>
-    <p class="og-kicker">Colorado School of Mines, Fall 2026</p>
+    <p class="og-top"><svg viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#15223a"/><rect x="4" y="6" width="7" height="2.4" rx="1.2" fill="#fff"/><rect x="4" y="11.6" width="12" height="2.4" rx="1.2" fill="#fff"/></svg>Colorado School of Mines, Fall 2026</p>
     <h1>Coding with AI Agents</h1>
     <p class="og-lead">Students move from using AI coding agents to building, measuring, and securing their own.</p>
   </div>
-  {{ strata_compact }}
+  {{ timeline }}
 </body>
 </html>
