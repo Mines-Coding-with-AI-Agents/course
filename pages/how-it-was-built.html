@@ -1,0 +1,75 @@
+<!-- {
+  "path": "how-it-was-built/",
+  "nav": "built",
+  "class": "page-built",
+  "title": "How this course was built | Coding with AI Agents",
+  "og_title": "How a course about coding agents was built with coding agents",
+  "description": "The instructor of Coding with AI Agents at Colorado School of Mines on how the course was built with Claude Code: six reusable skills, research before writing, reviewer agents, and a student repository designed for agents."
+} -->
+<article class="article">
+  <div class="wrap">
+    <header class="article-head">
+      <h1>How this course was built</h1>
+      <p class="byline">A note from {{ instructor }}, who teaches the course. September 2026.</p>
+    </header>
+    <div class="prose">
+      <p class="lead">I built this course with Claude Code, the same coding agent my students first learn to use and then learn to engineer.</p>
+      <p>The lesson plans, quizzes, slides, lab checkers, and the repository my students work in all come out of one Git repository that I started on June 20, 2026, and by late September it held more than 200 commits. This page explains how that works, what the agents did, and where I stayed in charge, because a course about working with agents should be able to show its own working.</p>
+
+      <h2>The course lives in three kinds of repository.</h2>
+      <ul>
+        <li><strong>A private workspace for the instructor.</strong> It holds the lesson plans, the answer keys, and a log of every design decision with the reason behind it.</li>
+        <li><strong>A private course repository for students.</strong> Enrolled students clone it once and update it before every class. It is written for them and for their agent, so a good way in is to open Claude Code inside it and ask what to do next.</li>
+        <li><strong>Public project repositories that students own.</strong> All four projects ship as public GitHub repositories, so the work stays with the student after the semester ends.</li>
+      </ul>
+
+      <h2>Six skills do the repeatable work.</h2>
+      <p>A Claude Code skill is a written procedure that the agent loads when a task calls for it. Six of them build this course:</p>
+      <dl class="terms">
+        <dt><code>develop-lecture</code></dt>
+        <dd>turns a calendar entry into a full lesson plan and the lecture's page on Canvas.</dd>
+        <dt><code>generate-quiz</code></dt>
+        <dd>writes the short in-class quiz and packages it so that Canvas can import it directly.</dd>
+        <dt><code>generate-slides</code></dt>
+        <dd>builds the deck, with one full-sentence headline and one visual per slide and the talk track in the speaker notes.</dd>
+        <dt><code>author-student-materials</code></dt>
+        <dd>writes the pre-class preparation, the lab with its checker script, and a step-by-step replay of the in-class demo.</dd>
+        <dt><code>release-materials</code></dt>
+        <dd>copies a finished lecture into the student repository at least a week before class and tags the release.</dd>
+        <dt><code>develop-student-feature</code></dt>
+        <dd>builds and tests the tools that students use inside their repository.</dd>
+      </dl>
+      <p>Each skill is a living document. When I say I want something done differently, the change goes into the skill, so every later lecture follows it without my having to repeat myself.</p>
+
+      <h2>Research comes before writing.</h2>
+      <p>Before I wrote a lecture, seven research agents surveyed the public course listings of about 150 US universities to see what was already being taught about coding agents. That snapshot, from June 2026, pushed the course toward the parts that were rare: writing an agent from the raw model API and then porting it to a production SDK, building an MCP server, measuring retrieval with real information-retrieval metrics, treating evaluation as an experiment, and a full unit on agent security. Nine more agents then critiqued the whole design from the points of view of students, researchers, and people who hire engineers, and in late July a twelve-agent pass checked every lecture plan against the newest models and tools before the semester began.</p>
+      <p>The same habit continues during the semester. When I judged the first plan for lecture 7 too basic for students who had already built and steered an agent loop, a research pass through about 150 primary sources rebuilt it around five rules for debugging agent output. Lectures 8 to 11 were rebuilt the same way.</p>
+
+      <h2>The agent writes, and something else checks.</h2>
+      <p>Nothing an agent writes reaches my students on the agent's word. Each lecture goes through separate reviewer agents that check its accuracy, its consistency with the rest of the course, and whether the lab actually runs, and then I read it myself. It is the rule my students learn in lecture 7: the one who does the work is not the one who judges it.</p>
+      <p>My own corrections go into the skills. When the slides came out too full, the rule became one full-sentence headline and one visual per slide. When the student pages read as clipped and cold, I asked for the voice of a teaching assistant in office hours, and every page was rewritten. When an explanation squeezed a lab result into a four-word slogan, the rule became to say what was tried, give the numbers before and after, and say what the difference means.</p>
+
+      <h2>Students work inside a repository built for their agent.</h2>
+      <p>My students do not just read the course repository; they work in it with Claude Code. A handful of commands carry most of the semester:</p>
+      <dl class="terms">
+        <dt><code>/prep</code></dt>
+        <dd>walks a student through the pre-class video or reading and answers questions about it.</dd>
+        <dt><code>/quiz-me</code></dt>
+        <dd>checks that the student is ready for the in-class quiz.</dd>
+        <dt><code>/lab start 07</code></dt>
+        <dd>copies the lab's starter code into the student's own space, and <code>/lab check 07</code> runs the lab's checker and names what is still missing without fixing it.</dd>
+        <dt><code>/demo 07</code></dt>
+        <dd>replays the in-class demo one step at a time, with the student typing the prompts.</dd>
+        <dt><code>./bin/update</code></dt>
+        <dd>pulls the week's new material without ever losing a student's own edits.</dd>
+      </dl>
+      <p>A hook stops the agent from writing anywhere except the student's own work folder, so the course files stay intact whatever a student asks for, and a progress file that the agent keeps on the student's word shows what is still open before the next class.</p>
+
+      <h2>Some things stay private.</h2>
+      <p>Answer keys, my lesson plans with their facilitation notes, and grading details stay in the private workspace. No student's work appears on this site unless that student chooses to share it.</p>
+
+      <h2>If you teach something similar, I would like to compare notes.</h2>
+      <p>You can reach me at <a href="mailto:{{ email }}">{{ email }}</a>. I am glad to talk about how any of this works in practice.</p>
+    </div>
+  </div>
+</article>

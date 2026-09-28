@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Link preview image</title>
+<link rel="stylesheet" href="static/css/site.css">
+<style>
+  html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
+  body { display: grid; grid-template-columns: 1fr 470px; align-items: center; gap: 56px; padding: 0 64px 0 72px; box-sizing: border-box; background: var(--paper); }
+  .og-kicker { font-family: var(--head); font-weight: 500; font-size: 26px; color: var(--slate); margin: 0 0 18px; }
+  h1 { font-size: 92px; line-height: 0.95; letter-spacing: -0.015em; margin: 0 0 26px; }
+  .og-lead { font-size: 28px; line-height: 1.38; margin: 0; max-width: 17em; }
+  .strata-figure figcaption { display: none; }
+  .strata { --u: 19.5px; }
+  .layer { animation: none; }
+  .layer-name { font-size: 18px; }
+  .layer-when { font-size: 15px; }
+</style>
+</head>
+<body>
+  <div>
+    <p class="og-kicker">Colorado School of Mines, Fall 2026</p>
+    <h1>Coding with AI Agents</h1>
+    <p class="og-lead">Students move from using AI coding agents to building, measuring, and securing their own.</p>
+  </div>
+  {{ strata_compact }}
+</body>
+</html>

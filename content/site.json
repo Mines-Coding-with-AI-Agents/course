@@ -1,0 +1,15 @@
+{
+  "title": "Coding with AI Agents",
+  "school": "Colorado School of Mines",
+  "place": "Golden, Colorado",
+  "term": "Fall 2026",
+  "codes": "CSCI 498E and CSCI 598E",
+  "site_url": "https://mines-coding-with-ai-agents.github.io/course/",
+  "base_path": "/course/",
+  "instructor": "Zibo Wang",
+  "email": "zibowang@mines.edu",
+  "github_org": "https://github.com/Mines-Coding-with-AI-Agents",
+  "source_repo": "https://github.com/Mines-Coding-with-AI-Agents/course",
+  "og_image": "static/img/og.png",
+  "og_image_alt": "Coding with AI Agents, Colorado School of Mines, Fall 2026, beside a stratigraphic column of the semester's eight modules."
+}

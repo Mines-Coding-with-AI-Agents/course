@@ -1,0 +1,329 @@
+{
+  "first_day": "2026-08-25",
+  "last_day": "2026-12-08",
+  "refined_after": "2026-10-01",
+  "no_class": [
+    {
+      "date": "2026-09-15",
+      "why": "Career Day"
+    },
+    {
+      "date": "2026-10-13",
+      "why": "Fall Break"
+    },
+    {
+      "date": "2026-11-26",
+      "why": "Thanksgiving"
+    }
+  ],
+  "outcomes": [
+    "Use coding agents to plan and complete substantial programming tasks.",
+    "Design effective context and tools for an agent, including custom skills and management of the context window.",
+    "Construct multi-agent workflows that decompose a task and orchestrate the parts.",
+    "Build a lightweight agent from its core components: a model, a tool-use loop, and context management.",
+    "Evaluate coding agents on real tasks with benchmarks and metrics, and interpret the results honestly.",
+    "Analyze what agents can and cannot do, how they fail, and what responsible use looks like."
+  ],
+  "class_format": [
+    {
+      "when": "Before class",
+      "what": "A short video or reading on the day's idea."
+    },
+    {
+      "when": "First minutes",
+      "what": "A few quiz questions on that material, taken in the room."
+    },
+    {
+      "when": "Concept",
+      "what": "About twenty minutes on one idea and the evidence behind it."
+    },
+    {
+      "when": "Live demo",
+      "what": "The instructor drives Claude Code on the projector, including the moments when it goes wrong."
+    },
+    {
+      "when": "Lab",
+      "what": "Students build and measure something, and a checker script reports what is done and what is still missing."
+    }
+  ],
+  "modules": [
+    {
+      "number": 1,
+      "name": "Foundations and the working environment",
+      "short": "Foundations",
+      "rock": "sandstone",
+      "lectures": [
+        {
+          "n": 1,
+          "date": "2026-08-25",
+          "title": "Course Intro",
+          "summary": "How the course works, what a coding agent is, and a first look at Claude Code and GitHub."
+        },
+        {
+          "n": 2,
+          "date": "2026-08-27",
+          "title": "Foundations",
+          "summary": "From neural networks to transformers to coding agents, then a first hands-on session in Claude Code."
+        },
+        {
+          "n": 3,
+          "date": "2026-09-01",
+          "title": "Git, Verify, Deploy",
+          "summary": "Driving Git and GitHub through the agent, giving the agent a check it can run, and deploying a site to GitHub Pages that is verified live."
+        },
+        {
+          "n": 4,
+          "date": "2026-09-03",
+          "title": "Stochastic Outputs and In-Context Steering",
+          "summary": "Why repeated runs of one prompt differ, why no single run proves anything, and how context and examples steer the output."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Using agents fluently",
+      "short": "Fluent use",
+      "rock": "siltstone",
+      "lectures": [
+        {
+          "n": 5,
+          "date": "2026-09-08",
+          "title": "The Agentic Loop and Reasoning",
+          "summary": "The loop an agent runs, and the reasoning methods layered on it (chain of thought, self-consistency, ReAct, Reflexion), measured against each other."
+        },
+        {
+          "n": 6,
+          "date": "2026-09-10",
+          "title": "Prompting and Plan Mode",
+          "summary": "Prompting as a skill, the explore, plan, code, commit workflow, and judging an agent's plan before it edits anything."
+        },
+        {
+          "n": 7,
+          "date": "2026-09-17",
+          "title": "Review and Debug Agent Output",
+          "summary": "Debugging with an agent: build a failing test first, rank hypotheses, demand evidence, and keep a human at the symptom, the ranking, and the merge."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Context and memory",
+      "short": "Context and memory",
+      "rock": "shale",
+      "lectures": [
+        {
+          "n": 8,
+          "date": "2026-09-22",
+          "title": "Context Engineering",
+          "summary": "The context window as a budget: measuring what fills it, and five moves that keep a long session sharp."
+        },
+        {
+          "n": 9,
+          "date": "2026-09-24",
+          "title": "Memory Architectures",
+          "summary": "Four kinds of agent memory, how each maps onto files an agent writes and re-reads, and why a remembered fact can go stale."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Tools and retrieval",
+      "short": "Tools and retrieval",
+      "rock": "limestone",
+      "lectures": [
+        {
+          "n": 10,
+          "date": "2026-09-29",
+          "title": "Tool Use",
+          "summary": "What a model actually sees of a tool, four rules for designing reliable tools, and reliability measured over repeated runs."
+        },
+        {
+          "n": 11,
+          "date": "2026-10-01",
+          "title": "Structured Generation",
+          "summary": "A schema guarantees the shape of an answer but not its truth: constrained decoding, designing for missing data, and accuracy checked against a gold key."
+        },
+        {
+          "n": 12,
+          "date": "2026-10-06",
+          "title": "Embeddings and Retrieval",
+          "summary": "Embeddings as geometry, approximate nearest-neighbor search, and keyword retrieval with BM25, compared on the same questions."
+        },
+        {
+          "n": 13,
+          "date": "2026-10-08",
+          "title": "The RAG Pipeline",
+          "summary": "Retrieval-augmented generation end to end: hybrid retrieval, reranking, and answers grounded in their sources."
+        },
+        {
+          "n": 14,
+          "date": "2026-10-15",
+          "title": "RAG Evaluation",
+          "summary": "Measuring retrieval and answers with recall@k, MRR, nDCG, and faithfulness, and deciding when to prompt, retrieve, or fine-tune."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Extending agents: skills, MCP, and codebases",
+      "short": "Skills, MCP, codebases",
+      "rock": "dolomite",
+      "lectures": [
+        {
+          "n": 15,
+          "date": "2026-10-20",
+          "title": "Skills",
+          "summary": "Agent skills as reusable procedures that load only when they are needed, and writing one."
+        },
+        {
+          "n": 16,
+          "date": "2026-10-22",
+          "title": "MCP",
+          "summary": "The Model Context Protocol, its tool ecosystem and security basics, and building a server of your own."
+        },
+        {
+          "n": 17,
+          "date": "2026-10-27",
+          "title": "Codebase and Hooks",
+          "summary": "Agents on large codebases, spec-driven development, and deterministic guardrails written as hooks."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Architectures, multi-agent systems, and building from scratch",
+      "short": "Architectures",
+      "rock": "conglomerate",
+      "lectures": [
+        {
+          "n": 18,
+          "date": "2026-10-29",
+          "title": "Agent Architectures",
+          "summary": "From ReAct to Reflexion to plan-and-solve, and when a fixed workflow beats an autonomous agent."
+        },
+        {
+          "n": 19,
+          "date": "2026-11-03",
+          "title": "Multi-Agent Systems",
+          "summary": "Orchestrator and worker designs, and a structured debate over when several agents actually beat one."
+        },
+        {
+          "n": 20,
+          "date": "2026-11-05",
+          "title": "Build From Scratch I",
+          "summary": "Writing a working agent loop directly against the model API, to understand the machinery."
+        },
+        {
+          "n": 21,
+          "date": "2026-11-10",
+          "title": "Build From Scratch II and the Agent SDK",
+          "summary": "Adding context management, memory, and error handling, then porting the agent to the Claude Agent SDK."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Evaluation as a science",
+      "short": "Evaluation",
+      "rock": "quartzite",
+      "lectures": [
+        {
+          "n": 22,
+          "date": "2026-11-12",
+          "title": "Reading Benchmarks Critically",
+          "summary": "Construct validity and contamination, and how to read a coding-agent benchmark result with suspicion."
+        },
+        {
+          "n": 23,
+          "date": "2026-11-17",
+          "title": "Evals Are Experiments",
+          "summary": "Building an evaluation harness and reporting pass@k with error bars, variance, and statistical power."
+        },
+        {
+          "n": 24,
+          "date": "2026-11-19",
+          "title": "LLM as Judge",
+          "summary": "Where model graders are biased, how to check a grader, and evaluating the path an agent took versus only its outcome."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Security and the open frontier",
+      "short": "Security",
+      "rock": "basalt",
+      "lectures": [
+        {
+          "n": 25,
+          "date": "2026-11-24",
+          "title": "Open Frontier Discussion",
+          "summary": "A student-driven discussion of responsible use, economics, and where the field is going."
+        },
+        {
+          "n": 26,
+          "date": "2026-12-01",
+          "title": "Security and Guardrails",
+          "summary": "The lethal trifecta, indirect prompt injection against students' own systems, and guardrails and approval gates as part of the design."
+        }
+      ]
+    },
+    {
+      "number": null,
+      "name": "Demo Day",
+      "short": "Demo Day",
+      "rock": "surface",
+      "lectures": [
+        {
+          "n": 27,
+          "date": "2026-12-03",
+          "title": "Demo Day, first session",
+          "summary": "Student teams present the products they built."
+        },
+        {
+          "n": 28,
+          "date": "2026-12-08",
+          "title": "Demo Day, second session",
+          "summary": "The remaining teams present, and the semester closes."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "P1",
+      "name": "Personal website",
+      "format": "Individual",
+      "from": 4,
+      "to": 8,
+      "built": "Each student directed Claude Code to build a personal website and deployed it to GitHub Pages.",
+      "evidence": "Each site was handed in with a decision log, proof that the live site works, a short video on the design choices, and reviews of three classmates' sites."
+    },
+    {
+      "id": "P2",
+      "name": "RAG system",
+      "format": "Individual",
+      "from": 12,
+      "to": 17,
+      "built": "A question-answering system that retrieves from a document collection and grounds its answers in sources.",
+      "evidence": "Each system is measured against a hand-built set of questions, comparing keyword, embedding, and hybrid retrieval with reranking by recall@k, MRR, nDCG, and faithfulness."
+    },
+    {
+      "id": "P3",
+      "name": "Codebase with custom skills",
+      "format": "Individual",
+      "from": 15,
+      "to": 22,
+      "built": "Students extend an existing codebase with agent engineering of their own: skills, hooks, MCP servers, and project instructions.",
+      "evidence": "Each student writes up what they automated and how they verified that it works."
+    },
+    {
+      "id": "P4",
+      "name": "Full-stack agent project",
+      "format": "Team",
+      "from": 13,
+      "to": 28,
+      "built": "Teams build a working product around an agent for a real user and present it at Demo Day.",
+      "evidence": "Each team backs one claim about its system with a small evaluation and writes a threat model for it."
+    }
+  ]
+}

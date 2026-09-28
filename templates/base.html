@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+{{ robots }}
+{{ head_links }}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Coding with AI Agents">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ og_image_alt }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1d2b3f">
+<link rel="icon" href="{{ base }}static/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="{{ base }}static/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base }}static/fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ base }}static/css/site.css?v={{ css_version }}">
+</head>
+<body class="{{ page_class }}">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ base }}"{{ current_home }}>
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="2" width="18" height="5" fill="#1d2b3f"/><rect x="3" y="7" width="18" height="4" fill="#cbd6df"/><rect x="3" y="11" width="18" height="5" fill="#d9c7a7"/><rect x="3" y="16" width="18" height="6" fill="#e8d9b5"/><rect x="3" y="2" width="18" height="20" fill="none" stroke="#1d2b3f" stroke-width="1.5"/></svg>
+      <span>Coding with AI Agents</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="{{ base }}curriculum/"{{ current_curriculum }}>Curriculum</a>
+      <a href="{{ base }}how-it-was-built/"{{ current_built }}>How it was built</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{{ content }}
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-title">Coding with AI Agents</p>
+      <p>CSCI 498E and CSCI 598E at Colorado School of Mines, Golden, Colorado. Taught by {{ instructor }}, who can be reached at <a href="mailto:{{ email }}">{{ email }}</a>.</p>
+    </div>
+    <div>
+      <p>This site shows what the course teaches and, after Demo Day, the work that students choose to share. Course materials for enrolled students, answer keys, and grading details stay private.</p>
+      <p><a href="{{ source_repo }}">The source for this site is on GitHub</a>. Last updated {{ updated }}.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

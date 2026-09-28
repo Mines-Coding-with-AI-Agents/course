@@ -1,0 +1,92 @@
+<!-- {
+  "path": "",
+  "nav": "home",
+  "class": "page-home",
+  "title": "Coding with AI Agents at Colorado School of Mines",
+  "og_title": "Coding with AI Agents, a Colorado School of Mines course",
+  "description": "A semester-long course at Colorado School of Mines in which students move from using AI coding agents to building, measuring, and securing their own. Fall 2026."
+} -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="kicker">CSCI 498E and 598E at Colorado School of Mines, Fall 2026</p>
+      <h1>Coding with AI Agents</h1>
+      <p class="lead">A semester-long course in which students move from using AI coding agents to building, measuring, and securing their own.</p>
+      <dl class="facts">
+        <div><dt>Schedule</dt><dd>28 lectures, from August 25 to December 8, 2026</dd></div>
+        <div><dt>Projects</dt><dd>Four, each shipped as a public GitHub repository</dd></div>
+        <div><dt>Students</dt><dd>Undergraduate and graduate sections, taught together</dd></div>
+        <div><dt>Format</dt><dd>Short preparation before class, then a live demo and a lab in the room</dd></div>
+      </dl>
+      <p class="actions">
+        <a class="button" href="{{ base }}curriculum/">See the curriculum</a>
+        <a class="button button-quiet" href="{{ base }}how-it-was-built/">Read how the course was built</a>
+      </p>
+    </div>
+    {{ strata_compact }}
+  </div>
+</section>
+
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <div class="wrap">
+    <h2 id="projects-title">Students ship four public projects over the semester.</h2>
+    <p class="section-lead">Every project lives in a public GitHub repository that the student owns, and every project is handed in with evidence that it works.</p>
+    {{ projects }}
+  </div>
+</section>
+
+<section class="section section-rule" id="machinery" aria-labelledby="machinery-title">
+  <div class="wrap">
+    <h2 id="machinery-title">Students build the machinery behind coding agents, not just use it.</h2>
+    <ul class="machinery">
+      <li>
+        <h3>An agent written from scratch</h3>
+        <p>Students write a working agent loop directly against the model API, then port it to the Claude Agent SDK.</p>
+        <a class="ref" href="{{ base }}curriculum/#lecture-20">Lectures 20 and 21</a>
+      </li>
+      <li>
+        <h3>Tools and an MCP server of their own</h3>
+        <p>They redesign a tool one change at a time, measure its reliability over repeated runs, and build a Model Context Protocol server.</p>
+        <a class="ref" href="{{ base }}curriculum/#lecture-10">Lectures 10 and 16</a>
+      </li>
+      <li>
+        <h3>Retrieval measured properly</h3>
+        <p>Their retrieval systems are scored against a gold set with recall@k, MRR, nDCG, and faithfulness, the way search engineers measure retrieval.</p>
+        <a class="ref" href="{{ base }}curriculum/#lecture-12">Lectures 12 to 14</a>
+      </li>
+      <li>
+        <h3>Evaluation run as an experiment</h3>
+        <p>They read benchmarks for contamination, report pass@k with error bars, and check where a model grader is biased.</p>
+        <a class="ref" href="{{ base }}curriculum/#lecture-22">Lectures 22 to 24</a>
+      </li>
+      <li>
+        <h3>Debugging that does not take the agent's word</h3>
+        <p>They start from a failing test, rank their hypotheses, and accept a fix only with evidence, because the agent that wrote the code does not get to judge it.</p>
+        <a class="ref" href="{{ base }}curriculum/#lecture-7">Lecture 7</a>
+      </li>
+      <li>
+        <h3>Attacks on their own systems</h3>
+        <p>They run prompt injection against their own retrieval pipelines, then add guardrails and human approval gates.</p>
+        <a class="ref" href="{{ base }}curriculum/#lecture-26">Lecture 26</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-rule" id="built" aria-labelledby="built-title">
+  <div class="wrap built">
+    <h2 id="built-title">The course is built with the same tools it teaches.</h2>
+    <div class="prose">
+      <p>Its lesson plans, quizzes, slides, and lab checkers come out of a Git repository in which Claude Code drafts the work under six reusable skills, separate reviewer agents check each draft, and the instructor has the final say. Since the first commit on June 20, 2026, that repository has grown past 200 commits.</p>
+      <p>Students work the same way. The course repository they clone is written for them and for their agent, so they open Claude Code inside it to prepare for class, to start and check their labs, and to replay the in-class demos one step at a time.</p>
+      <p><a href="{{ base }}how-it-was-built/">Read how the course was built</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="demo-day" id="demo-day" aria-labelledby="demo-day-title">
+  <div class="wrap">
+    <h2 id="demo-day-title">Student teams present their products on December 3 and December 8, 2026.</h2>
+    <p>Each team builds a working product around an agent for a real user, backs one claim about it with a small evaluation, and writes a threat model for it. After Demo Day, this page will show the projects of the teams that choose to share them.</p>
+  </div>
+</section>
