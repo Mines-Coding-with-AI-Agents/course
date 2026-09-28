@@ -18,16 +18,19 @@ import re
 import shutil
 import subprocess
 import sys
-from datetime import date
+from datetime import date, datetime
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "_site"
 SITE = json.loads((ROOT / "content" / "site.json").read_text())
 CURRICULUM = json.loads((ROOT / "content" / "curriculum.json").read_text())
 BASE = SITE["base_path"]
+# Project status lines follow the calendar in Golden, Colorado, not the build machine's clock.
+COURSE_TZ = ZoneInfo("America/Denver")
 
 META_RE = re.compile(r"\A<!--\s*(\{.*?\})\s*-->\s*", re.S)
 SLOT_RE = re.compile(r"\{\{\s*([a-z_]+)\s*\}\}")
@@ -75,20 +78,29 @@ def project_dates(project):
     return day(lecture(project["from"])["date"]), day(lecture(project["to"])["date"])
 
 
+def demo_day():
+    """"Demo Day on December 3 and 8", from the dates of the Demo Day lectures."""
+    days = [day(lec["date"]) for m in CURRICULUM["modules"] if m["number"] is None for lec in m["lectures"]]
+    if all(d.month == days[0].month for d in days):
+        return f"Demo Day on {long_date(days[0])} and {' and '.join(str(d.day) for d in days[1:])}"
+    return "Demo Day on " + " and ".join(long_date(d) for d in days)
+
+
 def project_status(project, today):
+    """One line on where a project stands, computed from the calendar on the day of the build."""
     start, due = project_dates(project)
-    if project["id"] == "P4":
-        demo = "presented at Demo Day on December 3 and 8"
+    kind = f"{project['format']} project"
+    if project["to"] == len(lectures()):
         if today > due:
-            return f"{project['format']} project, presented at Demo Day on December 3 and 8."
+            return f"{kind}, presented at {demo_day()}."
         if today >= start:
-            return f"{project['format']} project, under way and {demo}."
-        return f"{project['format']} project, from {long_date(start)} to Demo Day on December 3 and 8."
+            return f"{kind}, under way until {demo_day()}."
+        return f"{kind}, from {long_date(start)} to {demo_day()}."
     if today > due:
-        return f"{project['format']} project, handed in {long_date(due)}."
+        return f"{kind}, handed in {long_date(due)}."
     if today >= start:
-        return f"{project['format']} project, under way and due {long_date(due)}."
-    return f"{project['format']} project, {long_date(start)} to {long_date(due)}."
+        return f"{kind}, under way and due {long_date(due)}."
+    return f"{kind}, {long_date(start)} to {long_date(due)}."
 
 
 def project_lanes():
@@ -119,16 +131,22 @@ def strata(variant):
         first, last = module["lectures"][0], module["lectures"][-1]
         rows = f"grid-row: {total + 1 - last['n']} / {total + 2 - first['n']}"
         anchor = module["number"] or "demo-day"
-        name = module["name"] if full else module["short"]
         start, end = day(first["date"]), day(last["date"])
         when = f"{short_date(start)} to {short_date(end)}" if start != end else short_date(start)
         if module["number"] is None:
             when = f"{short_date(start)} and {short_date(end)}"
-        detail = f"Lectures {first['n']} to {last['n']}, {when}" if full and module["number"] else when
+        if full:
+            # Long names on wide screens; the CSS swaps in the short names on phones.
+            name = (f'<span class="name-long">{e(module["name"])}</span>'
+                    f'<span class="name-short">{e(module["short"])}</span>')
+            lectures_part = f"Lectures {first['n']} to {last['n']}, " if module["number"] else ""
+            detail = f'<span class="when-lectures">{lectures_part}</span>{e(when)}' if lectures_part else e(when)
+        else:
+            name, detail = e(module["short"]), e(when)
         items.append(
             f'<div class="layer rock-{module["rock"]}" style="{rows}; --i: {i}" aria-hidden="true"></div>'
             f'<a class="layer-label" style="{rows}" href="{link.format(anchor)}">'
-            f'<span class="layer-name">{e(name)}</span><span class="layer-when">{e(detail)}</span></a>'
+            f'<span class="layer-name">{name}</span><span class="layer-when">{detail}</span></a>'
         )
     for project in CURRICULUM["projects"]:
         start, due = project_dates(project)
@@ -224,7 +242,7 @@ def last_updated():
                              capture_output=True, text=True, check=True).stdout.strip()
         return date.fromisoformat(out)
     except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
-        return date.today()
+        return datetime.now(COURSE_TZ).date()
 
 
 def asset_version():
@@ -243,7 +261,7 @@ def read_page(path):
 
 
 def build(today=None):
-    today = today or date.today()
+    today = today or datetime.now(COURSE_TZ).date()
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT / "static")
@@ -304,6 +322,25 @@ def build(today=None):
 
 class PrefixHandler(SimpleHTTPRequestHandler):
     """Serve _site/ under the base path, the way GitHub Pages serves a project site."""
+
+    def do_GET(self):
+        if not self.redirect_bare_base():
+            super().do_GET()
+
+    def do_HEAD(self):
+        if not self.redirect_bare_base():
+            super().do_HEAD()
+
+    def redirect_bare_base(self):
+        """Send /course to /course/, as GitHub Pages does."""
+        path, _, query = self.path.partition("?")
+        if path != BASE.rstrip("/"):
+            return False
+        self.send_response(301)
+        self.send_header("Location", BASE + (f"?{query}" if query else ""))
+        self.send_header("Content-Length", "0")
+        self.end_headers()
+        return True
 
     def translate_path(self, path):
         if path.startswith(BASE):

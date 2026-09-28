@@ -201,7 +201,7 @@ def check_text():
     sources = [p for p in ROOT.glob("content/*.json")] + list(ROOT.glob("pages/*.html")) + list(ROOT.glob("templates/*.html"))
     dashes = [str(p.relative_to(ROOT)) for p in built + sources if "—" in p.read_text()]
     check(not dashes, "text: no em dash anywhere" + (f" ({', '.join(dashes)})" if dashes else ""))
-    leaks = sorted({f"{p.relative_to(OUT)}: {w}" for p in built for w in FORBIDDEN if w in p.read_text().lower()})
+    leaks = sorted({f"{p.relative_to(ROOT)}: {w}" for p in built + sources for w in FORBIDDEN if w in p.read_text().lower()})
     check(not leaks, "text: no private instructor-repo file names" + (f" ({'; '.join(leaks[:4])})" if leaks else ""))
 
 
