@@ -377,11 +377,16 @@ code {
 .tl-month {
   grid-row: 1;
   align-self: end;
+  justify-self: start;
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  box-shadow: 0 0 0 3px var(--bg);
   color: var(--muted);
   font-size: 12.5px;
   font-weight: 520;
   line-height: 1;
-  padding: 0 0 10px 1.5px;
+  margin: 0 0 10px 1.5px;
 }
 
 .tl-seg {
