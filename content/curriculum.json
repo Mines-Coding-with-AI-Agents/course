@@ -143,13 +143,13 @@
           "n": 12,
           "date": "2026-10-06",
           "title": "Embeddings and Retrieval",
-          "summary": "Embeddings as geometry, approximate nearest-neighbor search, and keyword retrieval with BM25, compared on the same questions."
+          "summary": "What keyword search, embeddings, and an agent with grep each miss, measured per question type on one gold set, and why a leaderboard score does not predict your own questions."
         },
         {
           "n": 13,
           "date": "2026-10-08",
           "title": "The RAG Pipeline",
-          "summary": "Retrieval-augmented generation end to end: hybrid retrieval, reranking, and answers grounded in their sources."
+          "summary": "Fusion, reranking, and cited answers each help on average and can hurt on a given dataset, so each stage is added and measured on its own and every citation is checked against its source."
         },
         {
           "n": 14,
