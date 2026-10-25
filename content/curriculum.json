@@ -180,7 +180,7 @@
           "n": 17,
           "date": "2026-10-27",
           "title": "Codebase and Hooks",
-          "summary": "Agents on large codebases, spec-driven development, and deterministic guardrails written as hooks."
+          "summary": "What an agent cannot learn from an unfamiliar codebase, specs as decisions the owner makes, and hooks that enforce a rule on every tool call they watch."
         }
       ]
     },
@@ -193,7 +193,7 @@
           "n": 18,
           "date": "2026-10-29",
           "title": "Agent Architectures",
-          "summary": "From ReAct to Reflexion to plan-and-solve, and when a fixed workflow beats an autonomous agent."
+          "summary": "Who owns the control flow, your code or the model: a fixed workflow measured against an agent on the same tasks, and a router that tries the cheaper one first."
         },
         {
           "n": 19,
