@@ -199,18 +199,18 @@
           "n": 19,
           "date": "2026-11-03",
           "title": "Multi-Agent Systems",
-          "summary": "Orchestrator and worker designs, and a structured debate over when several agents actually beat one."
+          "summary": "What crosses the handoff between a lead agent and its workers, five questions to ask before splitting a coding task, a structured debate over the evidence, and one agent measured against a team on the same tasks."
         },
         {
           "n": 20,
           "date": "2026-11-05",
           "title": "Build From Scratch I",
-          "summary": "Writing a working agent loop directly against the model API, to understand the machinery."
+          "summary": "A coding agent written directly against the model API, the four promises its loop must keep and the guards that bound what it spends, with its first call measured against Claude Code's on the same task."
         },
         {
           "n": 21,
           "date": "2026-11-10",
-          "title": "Build From Scratch II and the Agent SDK",
+          "title": "Build From Scratch II and the Agent SDK",
           "summary": "Adding context management, memory, and error handling, then porting the agent to the Claude Agent SDK."
         }
       ]
