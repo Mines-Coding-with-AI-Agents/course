@@ -211,7 +211,7 @@
           "n": 21,
           "date": "2026-11-10",
           "title": "Build From Scratch II and the Agent SDK",
-          "summary": "Adding context management, memory, and error handling, then porting the agent to the Claude Agent SDK."
+          "summary": "The Claude Agent SDK, then the live build resumed from its repository alone: the specification checked before any code, and a first slice built test-first and checked against Claude Code's own numbers."
         }
       ]
     },
