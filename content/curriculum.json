@@ -224,7 +224,7 @@
           "n": 22,
           "date": "2026-11-12",
           "title": "Reading Benchmarks Critically",
-          "summary": "Construct validity and contamination, and how to read a coding-agent benchmark result with suspicion."
+          "summary": "What a coding-benchmark score really measures: an agent that solves a task by reading the repository's history, and a measurement of how much a model's answers owe to memory, with a control group."
         },
         {
           "n": 23,
