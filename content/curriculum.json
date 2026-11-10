@@ -303,7 +303,7 @@
       "name": "Codebase with custom skills",
       "format": "Individual",
       "from": 15,
-      "to": 22,
+      "to": 25,
       "short": "Codebase and skills",
       "summary": "An existing codebase extended with the student's own skills, hooks, and MCP servers, with a write-up of what was automated and how it was verified."
     },
