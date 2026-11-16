@@ -230,7 +230,7 @@
           "n": 23,
           "date": "2026-11-17",
           "title": "Evals Are Experiments",
-          "summary": "Building an evaluation harness and reporting pass@k with error bars, variance, and statistical power."
+          "summary": "A small evaluation harness that runs an agent several times per task against hidden tests, reports pass@1, pass@k and pass^k with intervals that resample whole tasks, and reads the failed trials before trusting the number."
         },
         {
           "n": 24,
